@@ -1,11 +1,11 @@
 #![no_std]
 #![no_main]
 
+use ruduino::cores::current::port;
 use ruduino::Pin;
-use ruduino::cores::current::{port};
 
 #[no_mangle]
-pub extern fn main() {
+pub extern "C" fn main() {
     port::B5::set_output();
 
     loop {
